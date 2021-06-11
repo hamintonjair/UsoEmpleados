@@ -20,16 +20,17 @@ public class Uso_Empleado {
     public static void main(String[] args) {
       
         
-        Jefatura jefe_RRHH = new Jefatura(" jair,", 55000, 2006, 9, 25);
+        Jefatura jefe_RRHH = new Jefatura("jair,", 55000, 2006, 9, 25);
        jefe_RRHH.estableceIncentivo(2570);
        
        
-       Empleado[] misEmpleados = new Empleado[4];
+       Empleado[] misEmpleados = new Empleado[5];
        
        misEmpleados[0] = jefe_RRHH; //POLIMORFISMO EN ACCION, PRINCIPIO DE SUSTITUCION   
-       misEmpleados[1] = new Empleado(" Haminton Mena,", 95000, 2000, 12, 18);
-       misEmpleados[2] = new Empleado(" Horacio Palacios,", 85000, 2001, 11, 17);
-       misEmpleados[3] = new Empleado(" Digna Luz Cordoba,", 75000, 2002, 10, 16);       
+       misEmpleados[1] = new Empleado("Haminton Mena,", 95000, 2000, 12, 18);
+       misEmpleados[2] = new Empleado("Horacio Palacios,", 85000, 2001, 11, 17);
+       misEmpleados[3] = new Empleado("Digna Luz Cordoba,", 75000, 2002, 10, 16); 
+       misEmpleados[4] = new Jefatura("Maria", 95000, 1990, 5, 26);
        
         for(Empleado d: misEmpleados){
               d.subeSueldo(5);
