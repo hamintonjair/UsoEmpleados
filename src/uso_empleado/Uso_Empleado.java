@@ -31,6 +31,9 @@ public class Uso_Empleado {
        misEmpleados[2] = new Empleado("Horacio Palacios,", 85000, 2001, 11, 17);
        misEmpleados[3] = new Empleado("Digna Luz Cordoba,", 75000, 2002, 10, 16); 
        misEmpleados[4] = new Jefatura("Maria", 95000, 1990, 5, 26);
+       //refundicion o casting para la jefatura donde le incrementaria el incentivo
+       Jefatura jefa_Fianzas = (Jefatura) misEmpleados[4];
+       jefa_Fianzas.estableceIncentivo(55000);
        
         for(Empleado d: misEmpleados){
               d.subeSueldo(5);
@@ -56,6 +59,10 @@ class Empleado{
         Id = IdSiguiente;
         
     }
+    public Empleado(String nomb){
+        this(nomb, 30000, 2000, 01, 01);
+    }
+    
     //metodo getter o get
     public String dameNombre(){
         return nombre + " Id: " + Id ;
@@ -80,6 +87,7 @@ class Empleado{
     private int Id;
        
 }
+//para que herede de jefatura se escribe estends
 class Jefatura extends Empleado{
     
     public Jefatura(String nomb, double suel, int año, int mes, int dia){
@@ -96,4 +104,10 @@ class Jefatura extends Empleado{
     }
     
     private double incentivo;
+}
+//para que herede de jefatura se escribe estends
+class Director extends Jefatura{
+    public Director(String nomb, double suel, int año, int mes, int dia){
+        super(nomb, suel, año, mes, dia);
+    }
 }
